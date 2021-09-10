@@ -16,21 +16,11 @@ Rules = {
     1: "I"
   }
 
-fiveHunna = {
-    'roman': 'D',
-    'arabic': 500,
-    'roman_subtractor': 'C',
-    'arabic_subtractor': 100
-  }
-
-
 def convert(number):
   for key, val in Rules.items():
     if number in Rules:
       return Rules[number]
     elif number - key > 0:
-      if number - arabic_subtractor > 0:
-        return roman_subtractor + roman + convert(number - arabic + arabic_subtractor)
       return val + convert(number - key)
 
   
